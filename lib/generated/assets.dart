@@ -5,16 +5,29 @@ class Assets {
   static const String assetsImagesPreAuth01 = 'assets/images/pre_auth_01.png';
   static const String assetsImagesPreAuth02 = 'assets/images/pre_auth_02.png';
   static const String assetsImagesPreAuth03 = 'assets/images/pre_auth_03.png';
+  static const String audioTestAudio = 'assets/audio/test_audio.mp3';
   static const String fontsInterRegular = 'assets/fonts/Inter-Regular.ttf';
   static const String imagesAbhisLogo = 'assets/images/abhis_logo.png';
+  static const String imagesDashboardTriangle =
+      'assets/images/dashboard_triangle.png';
+  static const String imagesDrawerTriangle =
+      'assets/images/drawer_triangle.png';
+  static const String imagesListening = 'assets/images/listening.png';
+  static const String imagesLogOut = 'assets/images/log_out.png';
   static const String imagesLoginBottomLeft =
       'assets/images/login_bottom_left.png';
   static const String imagesLoginTopRight = 'assets/images/login_top_right.png';
   static const String imagesPreAuth01 = 'assets/images/pre_auth_01.png';
   static const String imagesPreAuth02 = 'assets/images/pre_auth_02.png';
   static const String imagesPreAuth03 = 'assets/images/pre_auth_03.png';
+  static const String imagesProfile = 'assets/images/profile.jpeg';
+  static const String imagesReading = 'assets/images/reading.png';
+  static const String imagesSettings = 'assets/images/settings.png';
+  static const String imagesSpeaking = 'assets/images/speaking.png';
   static const String imagesSplashBottomLeft =
       'assets/images/splash_bottom_left.png';
   static const String imagesSplashTopRight =
       'assets/images/splash_top_right.png';
+  static const String imagesTrophy = 'assets/images/trophy.png';
+  static const String imagesWriting = 'assets/images/writing.png';
 }
