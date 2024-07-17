@@ -14,12 +14,12 @@ class HamburgerIcon extends StatelessWidget {
             height: 4.64,
             width: 22.63,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(28),
-                color: Colors.white),
+                borderRadius: BorderRadius.circular(28), color: Colors.white),
           ).marginOnly(bottom: 2.23)
-      ]).onTap(() {
-        Scaffold.of(context).openDrawer();
-      }).marginAll(13);
+      ]).marginAll(13);
+    }).color(Colors.transparent).onTap(() {
+      print("Drawer tapped");
+      Scaffold.of(context).openDrawer();
     });
   }
 }

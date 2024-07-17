@@ -1,16 +1,17 @@
- import 'package:ielts_frontend/activity/reading/view/Reading.dart';
 import 'package:ielts_frontend/export.dart';
 import 'package:ielts_frontend/widgets/helper_widgets/hamburger_icon.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'dart:async';
 import 'package:confetti/confetti.dart';
 
-class SpeakingPage extends StatefulWidget {
+class SpeakingTaskPage extends StatefulWidget {
+  const SpeakingTaskPage({super.key});
+
   @override
-  _SpeakingPageState createState() => _SpeakingPageState();
+  _SpeakingTaskPageState createState() => _SpeakingTaskPageState();
 }
 
-class _SpeakingPageState extends State<SpeakingPage> {
+class _SpeakingTaskPageState extends State<SpeakingTaskPage> {
   late stt.SpeechToText _speech;
   bool _isListening = false;
   String _spokenText = 'Speak Now......';
@@ -85,10 +86,16 @@ class _SpeakingPageState extends State<SpeakingPage> {
         child: Column(
           children: <Widget>[
             Container(
+              height: 40,
               color: Color(0xFF0d5d50),
               child: Row(
                 children: [
-                  HamburgerIcon(),
+                  Icon(
+                    Icons.arrow_back_outlined,
+                    color: Colors.white,
+                  ).onTap(() {
+                    Get.back();
+                  }),
                   SizedBox(width: 20),
                   Text(
                     "Speaking",
@@ -117,7 +124,8 @@ class _SpeakingPageState extends State<SpeakingPage> {
                   Spacer(),
                   Icon(Icons.spatial_audio_off, size: 30, color: Colors.white),
                   SizedBox(width: 40),
-                  Icon(Icons.person_pin_outlined, size: 34, color: Colors.white),
+                  Icon(Icons.person_pin_outlined,
+                      size: 34, color: Colors.white),
                 ],
               ),
             ),
@@ -213,7 +221,7 @@ class _SpeakingPageState extends State<SpeakingPage> {
                 ],
               ),
             ),
-             Container(
+            Container(
               width: double.infinity,
               padding: EdgeInsets.all(16.0),
               child: ElevatedButton(
@@ -238,7 +246,7 @@ class _SpeakingPageState extends State<SpeakingPage> {
 class DisplayTextPage extends StatefulWidget {
   final String spokenText;
 
-  DisplayTextPage({required this.spokenText});
+  DisplayTextPage({super.key, required this.spokenText});
 
   @override
   _DisplayTextPageState createState() => _DisplayTextPageState();

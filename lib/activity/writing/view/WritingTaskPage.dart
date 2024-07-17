@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:ielts_frontend/export.dart';
 import 'package:ielts_frontend/widgets/helper_widgets/hamburger_icon.dart';
@@ -6,12 +5,14 @@ import 'dart:convert';
 import 'dart:async';
 import 'Error_page.dart'; // Ensure this import points to the correct path
 
-class Writting_page extends StatefulWidget {
+class WritingTaskPage extends StatefulWidget {
+  const WritingTaskPage({super.key});
+
   @override
-  _Writting_pageState createState() => _Writting_pageState();
+  _WritingTaskPageState createState() => _WritingTaskPageState();
 }
 
-class _Writting_pageState extends State<Writting_page> {
+class _WritingTaskPageState extends State<WritingTaskPage> {
   final TextEditingController _controller = TextEditingController();
   String _checkedContent = 'This is the checked content.';
   String _errors = 'Error: Something went wrong.';
@@ -157,7 +158,12 @@ class _Writting_pageState extends State<Writting_page> {
                         children: [
                           Row(
                             children: [
-                              HamburgerIcon(),
+                              Icon(
+                                Icons.arrow_back_outlined,
+                                color: Colors.white,
+                              ).onTap(() {
+                                Get.back();
+                              }),
                               SizedBox(width: 10),
                               Text(
                                 "Writing",

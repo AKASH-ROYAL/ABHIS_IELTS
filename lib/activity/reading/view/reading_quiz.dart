@@ -1,14 +1,15 @@
 import 'dart:async';
 
-import 'package:ielts_frontend/activity/reading/view/Reading.dart';
 import 'package:ielts_frontend/export.dart';
 
-class ReadingQuizScreen extends StatefulWidget {
+class ReadingQuiz extends StatefulWidget {
+  const ReadingQuiz({super.key});
+
   @override
-  _ReadingQuizScreenState createState() => _ReadingQuizScreenState();
+  _ReadingQuizPageState createState() => _ReadingQuizPageState();
 }
 
-class _ReadingQuizScreenState extends State<ReadingQuizScreen> {
+class _ReadingQuizPageState extends State<ReadingQuiz> {
   List<String> selectedOptions = List.filled(4, '');
   final Map<int, String> correctAnswers = {
     0: 'Colin',
@@ -41,10 +42,7 @@ class _ReadingQuizScreenState extends State<ReadingQuizScreen> {
       context: context,
       builder: (context) => CountdownDialog(
         score: score,
-        onCountdownComplete: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => ReadingList()));
-        },
+        onCountdownComplete: () {},
       ),
     );
   }
@@ -54,7 +52,9 @@ class _ReadingQuizScreenState extends State<ReadingQuizScreen> {
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(height: 32,),
+          SizedBox(
+            height: 32,
+          ),
           Expanded(
             child: Container(
               color: Color(0xFF0d5d50), // Set your desired color here
@@ -63,17 +63,20 @@ class _ReadingQuizScreenState extends State<ReadingQuizScreen> {
                   Row(
                     children: [
                       IconButton(
-                        icon: Icon(Icons.arrow_back, color: Colors.white), // Set icon color if needed
+                        icon: Icon(Icons.arrow_back, color: Colors.white),
+                        // Set icon color if needed
                         onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => ReadingList()));
+                          Get.back();
                         },
                       ),
                       Expanded(
                         child: Center(
                           child: Text(
                             "TASK 01",
-                            style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
@@ -83,19 +86,33 @@ class _ReadingQuizScreenState extends State<ReadingQuizScreen> {
                     alignment: Alignment.centerRight,
                     child: Text(
                       'Score: $score/4',
-                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
                     ),
                   ),
-                  Row(children: [
-
-                    Padding(
-                      padding: const EdgeInsets.only(left: 150),
-                      child: Icon(Icons.menu_book,size: 54.2,color: Colors.white,),
-                    ),
-                    Spacer(),
-                    SizedBox(width: 50,),
-                    Icon(Icons.person,size: 54.2,color: Colors.white,)
-                  ],)
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 150),
+                        child: Icon(
+                          Icons.menu_book,
+                          size: 54.2,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Spacer(),
+                      SizedBox(
+                        width: 50,
+                      ),
+                      Icon(
+                        Icons.person,
+                        size: 54.2,
+                        color: Colors.white,
+                      )
+                    ],
+                  )
                 ],
               ),
             ),
@@ -112,7 +129,7 @@ class _ReadingQuizScreenState extends State<ReadingQuizScreen> {
                         QuizQuestion(
                           questionNumber: '01',
                           questionText:
-                          'What is the name of Mary\'s cousin who is believed to be an invalid?',
+                              'What is the name of Mary\'s cousin who is believed to be an invalid?',
                           options: ['Dickon', 'Tom', 'Colin', 'John'],
                           onOptionSelected: (option) =>
                               handleOptionSelected(0, option),
@@ -121,7 +138,7 @@ class _ReadingQuizScreenState extends State<ReadingQuizScreen> {
                         QuizQuestion(
                           questionNumber: '02',
                           questionText:
-                          'What does Mary discover that becomes symbolic of her own neglected spirit?',
+                              'What does Mary discover that becomes symbolic of her own neglected spirit?',
                           options: [
                             'A hidden treasure in the attic',
                             'A secret passage in the manor',
@@ -135,7 +152,7 @@ class _ReadingQuizScreenState extends State<ReadingQuizScreen> {
                         QuizQuestion(
                           questionNumber: '03',
                           questionText:
-                          'Who becomes Mary\'s companions in her efforts to restore the garden?',
+                              'Who becomes Mary\'s companions in her efforts to restore the garden?',
                           options: [
                             'Mr. Craven and Mrs. Medlock',
                             'Colin and Lily',
@@ -149,7 +166,7 @@ class _ReadingQuizScreenState extends State<ReadingQuizScreen> {
                         QuizQuestion(
                           questionNumber: '04',
                           questionText:
-                          'What does Mary discover that becomes symbolic of her own neglected spirit?',
+                              'What does Mary discover that becomes symbolic of her own neglected spirit?',
                           options: [
                             'A hidden treasure in the attic',
                             'A secret passage in the manor',
@@ -170,14 +187,17 @@ class _ReadingQuizScreenState extends State<ReadingQuizScreen> {
                         onPressed: showScoreAndRedirect,
                         child: Text(
                           'Submit',
-                          style: TextStyle(color: Colors.white), // Text color inside the button
+                          style: TextStyle(
+                              color:
+                                  Colors.white), // Text color inside the button
                         ),
                         style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.white, backgroundColor: Color(0xFF0d5d50), // Text and icon color when the button is enabled
+                          foregroundColor: Colors.white,
+                          backgroundColor: Color(
+                              0xFF0d5d50), // Text and icon color when the button is enabled
                           // Optional: other button styles like shape, padding, etc.
                         ),
                       )
-
                     ],
                   ),
                 ],

@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:ielts_frontend/activity/auth/view/send_otp.dart';
+import 'package:ielts_frontend/activity/settings/view/settings.dart';
+import 'package:ielts_frontend/activity/terms_and_conditions/view/pricay_policy.dart';
+import 'package:ielts_frontend/activity/terms_and_conditions/view/terms_of_service.dart';
 import 'package:ielts_frontend/export.dart';
 
 class TemplateDrawer extends StatelessWidget {
@@ -34,7 +37,7 @@ class TemplateDrawer extends StatelessWidget {
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
                         gradient: linearGradient,
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           topRight: Radius.circular(15),
                           bottomLeft: Radius.circular(35),
                         )),
@@ -51,23 +54,42 @@ class TemplateDrawer extends StatelessWidget {
                   buildDrawerCard(
                       image: Assets.imagesSpeaking,
                       title: "Speaking",
-                      onTap: () {}),
+                      onTap: () {
+                        Get.back();
+                        taskController.taskListNavigation(taskIndex: 1);
+                      }),
                   buildDrawerCard(
                       image: Assets.imagesReading,
                       title: "Reading",
-                      onTap: () {}),
+                      onTap: () {
+                        Get.back();
+
+                        taskController.taskListNavigation(taskIndex: 2);
+                      }),
                   buildDrawerCard(
                       image: Assets.imagesWriting,
                       title: "Writing",
-                      onTap: () {}),
+                      onTap: () {
+                        Get.back();
+
+                        taskController.taskListNavigation(taskIndex: 3);
+                      }),
                   buildDrawerCard(
                       image: Assets.imagesListening,
                       title: "Listening",
-                      onTap: () {}),
+                      onTap: () {
+                        Get.back();
+
+                        taskController.taskListNavigation(taskIndex: 4);
+                      }),
                   buildDrawerCard(
                       image: Assets.imagesSettings,
                       title: "Settings",
-                      onTap: () {}),
+                      onTap: () {
+                        Get.back();
+
+                        Get.to(() => Settings());
+                      }),
                   buildDrawerCard(
                       image: Assets.imagesReading,
                       title: "Logout",
@@ -92,10 +114,27 @@ class TemplateDrawer extends StatelessWidget {
                       bottomRight: Radius.circular(15),
                       topLeft: Radius.circular(15))),
               child: Center(
-                child: NectText(
-                  text: "Privacy Policy",
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                child: VStack(
+                  [
+                    NectText(
+                      text: "Privacy Policy",
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ).onTap(() {
+                      Get.back();
+                      Get.to(() => PrivacyPolicyScreen());
+                    }),
+                    NectText(
+                      text: "Terms and Conditions",
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ).onTap(() {
+                      Get.back();
+
+                      Get.to(() => TermsOfServiceScreen());
+                    }),
+                  ],
+                  crossAlignment: CrossAxisAlignment.center,
                 ),
               ),
             ),
@@ -121,6 +160,11 @@ class TemplateDrawer extends StatelessWidget {
         color: primary_color,
         fontWeight: FontWeight.w500,
       )
-    ]).onInkTap(onTap).w(double.infinity).marginOnly(bottom: 21);
+    ])
+        .onInkTap(onTap
+            // Get.back();
+            )
+        .w(double.infinity)
+        .marginOnly(bottom: 21);
   }
 }

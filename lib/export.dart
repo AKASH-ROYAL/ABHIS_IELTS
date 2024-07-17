@@ -13,3 +13,5 @@ export 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 export 'package:ielts_frontend/activity/dashboard/view/dashboard.dart';
 
 export 'package:pinput/pinput.dart';
+
+export 'package:ielts_frontend/activity/task_list/model/task_model.dart';

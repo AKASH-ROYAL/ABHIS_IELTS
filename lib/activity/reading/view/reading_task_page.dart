@@ -1,17 +1,18 @@
+import 'dart:async';
 import 'package:ielts_frontend/activity/reading/view/reading_quiz.dart';
 import 'package:ielts_frontend/export.dart';
-import 'package:ielts_frontend/widgets/helper_widgets/hamburger_icon.dart';
 
-class ReadingList extends StatelessWidget {
-  const ReadingList({super.key});
-
+class ReadingTaskPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return TemplateScaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              height: 32,
+            ),
             Container(
               height: 150,
               color: Color(0xFF0d5d50),
@@ -19,7 +20,12 @@ class ReadingList extends StatelessWidget {
                 padding: const EdgeInsets.only(bottom: 90),
                 child: Row(
                   children: [
-                    HamburgerIcon(),
+                    Icon(
+                      Icons.arrow_back_outlined,
+                      color: Colors.white,
+                    ).onTap(() {
+                      Get.back();
+                    }),
                     Spacer(),
                     Text(
                       'Reading Exercise',
@@ -98,8 +104,8 @@ class ReadingList extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    Get.to(()=>ReadingQuizScreen());
-                   },
+                    Get.to(() => ReadingQuiz());
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF3A7869),
                     padding:
@@ -116,30 +122,6 @@ class ReadingList extends StatelessWidget {
             // Add more content or widgets below the row as needed
           ],
         ),
-      ),
-    );
-  }
-}
-
-class QuizScreen extends StatefulWidget {
-  static const routeName = '/quiz';
-
-  const QuizScreen({super.key});
-
-  @override
-  _QuizScreenState createState() => _QuizScreenState();
-}
-
-class _QuizScreenState extends State<QuizScreen> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Quiz Screen'),
-        backgroundColor: Color(0xFF3A7869),
-      ),
-      body: Center(
-        child: Text('This is the Quiz Screen'),
       ),
     );
   }
