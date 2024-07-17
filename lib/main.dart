@@ -14,12 +14,14 @@ import 'activity/profile/view/profile.dart';
 import 'activity/speaking/speaking.dart';
 import 'activity/terms_and_conditions/view/termsandcondition.dart';
 import 'activity/terms_and_conditions/view/termsandcondition2.dart';
+import 'activity/writing/view/Writting_page.dart';
 import 'activity/writing/view/writing_task.dart';
 
 void main() {
   runApp(GetMaterialApp(
-    home: NotificationPage(),
-    
+    // home:   ListeningTaskList(),
+    home: Profile(),
+
     theme: ThemeData(
       fontFamily: "Inter",
     ),
