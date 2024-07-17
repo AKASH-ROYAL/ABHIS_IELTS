@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ielts_frontend/activity/auth/view/verify_otp.dart';
+import 'package:ielts_frontend/export.dart';
 import 'package:ielts_frontend/generated/assets.dart';
 import 'package:ielts_frontend/widgets/nect_widgets/nect_text/nect_text.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -10,7 +11,7 @@ class SendOtp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return TemplateScaffold(
       body: Stack(
         children: [
           Column(

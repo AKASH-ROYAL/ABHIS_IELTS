@@ -6,3 +6,10 @@ export 'package:ielts_frontend/widgets/nect_widgets/nect_text/nect_text.dart';
 export 'package:velocity_x/velocity_x.dart';
 
 export 'package:wave_linear_progress_indicator/wave_linear_progress_indicator.dart';
+export 'package:ielts_frontend/widgets/component_widget/template_scaffold.dart';
+export 'package:flutter/services.dart';
+
+export 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
+export 'package:ielts_frontend/activity/dashboard/view/dashboard.dart';
+
+export 'package:pinput/pinput.dart';

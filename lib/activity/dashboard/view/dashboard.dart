@@ -1,6 +1,5 @@
-import 'package:ielts_frontend/activity/task_list/view/task_list.dart';
-import 'package:ielts_frontend/activity/writing/interns_work/Writting_form.dart';
-import 'package:ielts_frontend/export.dart';
+ import 'package:ielts_frontend/export.dart';
+import 'package:ielts_frontend/widgets/helper_widgets/hamburger_icon.dart';
 import 'package:ielts_frontend/widgets/helper_widgets/template_drawer.dart';
 
 class Dashboard extends StatelessWidget {
@@ -9,29 +8,15 @@ class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        drawer: TemplateDrawer(),
-        backgroundColor: primary_color,
+      child: TemplateScaffold(
+         backgroundColor: primary_color,
         body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           // icon
           Stack(
             children: [
               VStack(
                 [
-                  Builder(builder: (context) {
-                    return VStack([
-                      for (int i = 0; i < 3; i++)
-                        Container(
-                          height: 4.64,
-                          width: 22.63,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(28),
-                              color: Colors.white),
-                        ).marginOnly(bottom: 2.23)
-                    ]).onTap(() {
-                      Scaffold.of(context).openDrawer();
-                    }).marginAll(13);
-                  }),
+                  HamburgerIcon(),
                   HStack([
                     Container(
                       height: 71,
@@ -168,7 +153,7 @@ class Dashboard extends StatelessWidget {
                             alignment: MainAxisAlignment.center,
                           ),
                         ).onTap(() {
-                          Get.to(() => TaskList());
+                          // Get.to(() => TaskList());
                         }),
                       ),
                       34.widthBox,
@@ -198,7 +183,7 @@ class Dashboard extends StatelessWidget {
                             alignment: MainAxisAlignment.center,
                           ),
                         ).onTap(() {
-                          Get.to(() => TaskList());
+                          // Get.to(() => TaskList());
                         }),
                       ),
                     ],
@@ -232,7 +217,7 @@ class Dashboard extends StatelessWidget {
                             alignment: MainAxisAlignment.center,
                           ),
                         ).onTap(() {
-                          Get.to(() => Level3());
+                          // Get.to(() => Level3());
                         }),
                       ),
                       34.widthBox,
@@ -262,7 +247,7 @@ class Dashboard extends StatelessWidget {
                             alignment: MainAxisAlignment.center,
                           ),
                         ).onTap(() {
-                          Get.to(() => TaskList());
+                          // Get.to(() => TaskList());
                         }),
                       ),
                     ],

@@ -44,6 +44,10 @@ dependencies:
   wave_linear_progress_indicator: ^0.1.0
   assets_audio_player: ^3.1.1
   audioplayers: ^6.0.0
+  speech_to_text: ^6.6.2
+  confetti: ^0.7.0
+  google_fonts: ^6.2.1
+  flutter_svg: ^2.0.10+1
 
 
 dev_dependencies:
@@ -104,6 +108,12 @@ flutter:
     - assets/images/pre_auth_02.png
     - assets/images/pre_auth_03.png
     - assets/audio/test_audio.mp3
+    - assets/images/a.png
+    - assets/images/right.png
+    - assets/images/writing_header.png
+    - assets/images/Vector.png
+    - assets/images/writing01.png
+    - assets/images/writing02.jpeg
 
   fonts:
     - family: Inter

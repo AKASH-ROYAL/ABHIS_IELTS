@@ -4,6 +4,7 @@ import 'package:ielts_frontend/activity/auth/view/send_otp.dart';
 import 'dart:async';
 
 import 'package:ielts_frontend/generated/assets.dart';
+import 'package:ielts_frontend/widgets/component_widget/template_scaffold.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -48,7 +49,7 @@ class _SplashScreenState extends State<SplashScreen> {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return SafeArea(
-      child: Scaffold(
+      child: TemplateScaffold(
         body: Stack(
           alignment: Alignment.center,
           children: [

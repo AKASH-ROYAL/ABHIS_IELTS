@@ -1,10 +1,10 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-class Page5 extends StatelessWidget {
+class Error_page extends StatelessWidget {
   final String checkedContent;
   final String errors;
 
-  Page5({required this.checkedContent, required this.errors});
+  Error_page({required this.checkedContent, required this.errors});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class Page5 extends StatelessWidget {
         height: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: [Colors.greenAccent.shade100, Colors.white],
+            colors: [Colors.teal.shade100, Colors.white],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -50,16 +50,22 @@ class Page5 extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              Container(
-                padding: EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: Colors.green.shade50,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: Colors.green),
-                ),
-                child: Text(
-                  checkedContent,
-                  style: TextStyle(fontSize: 16, color: Colors.black),
+              SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Container(
+                  constraints: BoxConstraints(
+                    maxHeight: 200,
+                  ),
+                  padding: EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: Colors.teal.shade50,
+                    borderRadius: BorderRadius.circular(10),
+                    border: Border.all(color: Colors.teal.shade200),
+                  ),
+                  child: Text(
+                    checkedContent,
+                    style: TextStyle(fontSize: 16, color: Colors.black),
+                  ),
                 ),
               ),
               SizedBox(height: 20),
@@ -72,12 +78,15 @@ class Page5 extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              
               SingleChildScrollView(
+                scrollDirection: Axis.vertical,
                 child: Container(
+                  constraints: BoxConstraints(
+                    maxHeight: 200, // Adjust this height as needed
+                  ),
                   padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: Colors.red.shade50,
+                    color: Colors.teal.shade50,
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(color: Colors.red),
                   ),
@@ -95,9 +104,11 @@ class Page5 extends StatelessWidget {
                   },
                   child: Text('BACK'),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                    backgroundColor: Colors.teal.shade200,
+                    padding:
+                    EdgeInsets.symmetric(horizontal: 40, vertical: 15),
                     textStyle: TextStyle(
+                      color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),

@@ -1,15 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
-import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
-import 'package:get/get.dart';
-import 'package:ielts_frontend/activity/dashboard/view/dashboard.dart';
-import 'package:ielts_frontend/generated/assets.dart';
-import 'package:ielts_frontend/global.dart';
-import 'package:ielts_frontend/widgets/nect_widgets/nect_text/nect_text.dart';
 
-import 'package:pinput/pinput.dart';
-import 'package:velocity_x/velocity_x.dart';
+import 'package:ielts_frontend/export.dart';
 
 class VerifyOtp extends StatelessWidget {
   const VerifyOtp({super.key});
@@ -40,7 +31,7 @@ class VerifyOtp extends StatelessWidget {
         color: Color.fromRGBO(234, 239, 243, 1),
       ),
     );
-    return Scaffold(
+    return TemplateScaffold(
       body: Stack(
         children: [
           Column(
